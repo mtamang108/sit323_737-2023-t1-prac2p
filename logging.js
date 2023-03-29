@@ -4,7 +4,7 @@ const app = express();
 //simple request time logger
 
 app.use((req, res, next) => {
-    console.log("[Server Activity]: " + Date(Date.now()));
+    console.log("[Server Activity Time]: " + Date(Date.now()));
     next();
 });
 
