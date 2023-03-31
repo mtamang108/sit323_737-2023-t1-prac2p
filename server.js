@@ -1,11 +1,19 @@
 var express = require('express')
 var app = express()
 
-//respond with "hello world" when a GET request is made to the homepage
-app.get('/', function(req, res) { // GET Method facilitates you to send only limited amount of data
-    res.send('first web server')
+
+app.get('/', function(req, res) { 
+    res.send(`<h1>first web server</h1>`)
 })
 
-//list to a particular port
+app.get('/home', function(req, res) { 
+    res.send(`<h1>this is homepage</h1>`)
+})
 
-app.listen(3000)
+app.get('/about', function(req, res) { 
+    res.send(`<h1>this is about page</h1>`)
+})
+
+app.listen(3000, () => {
+    console.log("Server is live at port 3000");
+})
